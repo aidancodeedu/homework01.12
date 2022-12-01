@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //   1. İstəlinən sayda ədədlərin kvadratlarının cəmini tapan bir function yazın.
+
+          function sumSqrt(array) {
+            var sum = 0,
+              i = array.length;
+            while (i--) sum += Math.pow(array[i], 2);
+            return sum;
+          }
+
+          console.log(sumSqrt([0, 1, 2, 3, 7]));
+
+        console.log(square(4));
+
+        // 2. İstəlinən sayda ədədlərin ədədi ortasını tapan bir function yazın.
+
+          const arr = [...Array(100).keys()];
+
+          var sum = 0;
+
+          for (var number of arr) {
+            sum += number;
+          }
+
+          average = sum / arr.length;
+
+          console.log(average);
+
+        // 3. n-dən m-ə qədər x ədədinə tam bölünənlərin cəmini hesablayan bir function yazın.
+
+        function sumAll({ n, m, x }) {
+          let sum = 0;
+          for (let i = n; i < m; i++) {
+            if (i % x === 0) {
+              sum += i;
+            }
+          }
+          console.log("sum: ", sum);
+        }
+        sumAll({ n: 2, m: 11, x: 3 });
+
+      //   //   4. n-dən m-ə qədər sadə ədədlərin cəmini hesablayan bir function yazın.
+
+        const number = parseInt(prompt("Enter number: "));
+        let isPrime = true;
+
+        if (number === 1) {
+          console.log("1 is neither prime nor composite number.");
+        } else if (number > 1) {
+          for (let i = 2; i < number; i++) {
+            if (number % i == 0) {
+              isPrime = false;
+              break;
+            }
+          }
+
+          if (isPrime) {
+            console.log(`${number} is a prime number`);
+          } else {
+            console.log(`${number} is a not prime number`);
+          }
+        } else {
+          console.log("The number is not a prime number.");
+        }
+        // 5. Replace methodunu custom olaraq özünüz yazın.
+        // (Custom: Replace istifadə etmədən CustomReplace adında fucntionunuz olur.
+        // Həmin function replace ilə eyni nəticəni qaytarmalıdır)
+
+
+        const text='hi from another world hi'
+
+        function customReplace(text, from, to) {
+          const words = text.split(' ')
+          const i = words.findIndex(word=>word===from)
+           words[i]= to
+          const finalText= words.join(' ')
+          console.log('fe', words, finalText);
+          return finalText;
+
+        }
+        customReplace(text, 'hi', 'hello')
+    </script>
+  </body>
+</html>
